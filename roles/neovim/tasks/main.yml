@@ -1,0 +1,11 @@
+# Neovim Role
+#
+- name: Install Neovim
+  apt: pkg=neovim state=present
+  become: yes
+
+- name: Install JoeW neovim configuration
+  git: 
+    repo: https://github.com/joejwright/nvim-config.git  
+    dest: ~/.config/JoeW
+    update: true

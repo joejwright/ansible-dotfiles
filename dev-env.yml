@@ -4,6 +4,7 @@
   roles:
     - {role: git, tags: ['git']}
     - {role: vim, tags: ['vim']}
+    - {role: neovim, tags: ['neovim']}
     - {role: tmux, tags: ['tmux']}
     - {role: zsh, tags: ['zsh']}
     - {role: utils, tags: ['utils']}
