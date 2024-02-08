@@ -1,0 +1,5 @@
+#Git Role
+
+- name: Install Git
+  apt: pkg=git state=present
+  become: yes

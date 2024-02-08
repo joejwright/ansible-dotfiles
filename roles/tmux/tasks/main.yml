@@ -1,0 +1,14 @@
+#Tmux Role
+
+- name: Install Tmux
+  apt: pkg=tmux state=present
+  become: yes
+
+- name: Install tmux-plugin-manager
+  git: repo=https://github.com/tmux-plugins/tpm  dest=~/.tmux/plugins/tpm update=yes
+
+- name: Create tmux.conf
+  template:
+    src: tmux.conf.j2
+    dest: ~/.tmux.conf
+

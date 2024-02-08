@@ -1,0 +1,9 @@
+#Utils Role
+
+- name: Install Ack
+  apt: pkg=ack-grep state=present
+  become: yes
+
+- name: Install Tree
+  apt: pkg=tree state=present
+  become: yes

@@ -1,0 +1,22 @@
+# ZSH Role
+
+- name: Install ZSH
+  apt: pkg=zsh state=present
+  become: yes
+
+- name: Install oh-my-zsh
+  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.oh-my-zsh update=yes
+
+- name: Create .zshrc
+  template:
+    src: zshrc.j2
+    dest: ~/.zshrc
+
+- name: Create .zsh-aliases
+  template:
+    src: zsh-aliases.j2
+    dest: ~/.zsh-aliases
+
+- name: Set default shell
+  user: name={{ ansible_user_id  }} shell=/usr/bin/zsh
+  become: yes

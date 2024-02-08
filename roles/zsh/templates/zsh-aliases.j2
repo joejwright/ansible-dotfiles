@@ -1,0 +1,40 @@
+# rails
+alias dbm='rake db:migrate'
+alias dbr='rake db:rollback'
+alias ss='spring status'
+alias sst='spring stop'
+
+# rvm
+alias ri='rvm info'
+alias rc='rvm current'
+
+# open last migration
+alias lm='vim $(ls db/migrate/* | tail -n1)'
+
+# filesystem
+alias la='ls -lahG'
+alias hg='history | grep '
+
+# tmux
+alias tls='tmux ls'
+alias ta='tmux a -t'
+alias tn='tmux new -s'
+
+# git
+alias gl='git log --oneline --decorate --color --graph'
+alias gaa='git add -A'
+alias gcod='git checkout development'
+alias gcos='git checkout staging'
+alias gcom='git checkout master'
+
+alias gmd='git merge development'
+alias gms='git merge staging'
+
+# heroku
+alias ds='git push staging staging:master'
+alias dp='git push production master:master'
+
+# neovim
+alias nvim-joew="NVIM_APPNAME=JoeW \nvim"
+alias nvim="nvim-joew"
+alias vim="nvim-joew"

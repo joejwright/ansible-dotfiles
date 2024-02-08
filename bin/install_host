@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Setting up dev environment..."
+
+# Check if a host was provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <host>"
+    exit 1
+fi
+
+# Assign the first argument to a variable
+HOST=$1
+
+# Specify the playbook file name
+PLAYBOOK="dev-env.yml"
+
+# Run the ansible-playbook command
+ansible-playbook -i ${HOST}, ${PLAYBOOK} --ask-become-pass
+

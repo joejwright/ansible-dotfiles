@@ -1,0 +1,23 @@
+#Vim Role
+
+- name: Install Vim
+  apt: pkg=vim state=present
+  become: yes
+
+- name: Create folders
+  file: path={{item}} state=directory
+  with_items:
+    - "~/.vim/_temp/"
+    - "~/.vim/_backup/"
+
+- name: Install Vundle
+  git: repo=https://github.com/VundleVim/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim/ update=yes
+
+- name: Create .vimrc
+  template:
+    src: vimrc.j2
+    dest: ~/.vimrc
+
+- name: Perform Vundle install
+  shell: vim +PluginInstall +qall
+
