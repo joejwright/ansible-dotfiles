@@ -4,8 +4,21 @@
   apt: pkg=zsh state=present
   become: yes
 
-- name: Install oh-my-zsh
-  git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.oh-my-zsh update=yes
+- name: Get starship install script.
+  get_url:
+    url: https://starship.rs/install.sh
+    dest: /tmp/starship_install.sh
+    mode: '0755'
+
+- name: Run starship install script.
+  become: yes
+  shell:
+    cmd: /tmp/starship_install.sh --yes
+
+- name: Create starship.toml
+  template:
+    src: starship.toml.j2
+    dest: ~/.config/starship.toml
 
 - name: Create .zshrc
   template:
