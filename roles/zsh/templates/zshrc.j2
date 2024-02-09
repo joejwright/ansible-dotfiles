@@ -1,20 +1,4 @@
-
 DISABLE_AUTO_TITLE="true"
-
-export EDITOR="vim"
-
-export GEM_EDITOR="vim"
-
-export GOPATH=$HOME/Repos/Go
-
-plugins=(
-          git
-          ruby
-          rails
-          rvm
-          # osx
-          history
-        )
 
 # keep aliases in seperate file
 source $HOME/.zsh-aliases
@@ -33,6 +17,10 @@ export PATH=$PATH:$GOPATH/bin
 # Add case insensitive autocomplete
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit
+
+export EDITOR="nvim"
+export GEM_EDITOR="nvim"
+export GOPATH=$HOME/Repos/Go
 
 # Load starship prompt
 eval "$(starship init zsh)"
