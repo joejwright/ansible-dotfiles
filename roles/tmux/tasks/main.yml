@@ -12,3 +12,9 @@
     src: tmux.conf.j2
     dest: ~/.tmux.conf
 
+- name: Install tpm plugins
+  shell: ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+
+
+
+
