@@ -30,6 +30,11 @@
     src: zsh-aliases.j2
     dest: ~/.zsh-aliases
 
+- name: Create .zsh-functions
+  template:
+    src: zsh-functions.j2
+    dest: ~/.zsh-functions
+
 - name: Set default shell
   user: name={{ ansible_user_id  }} shell=/usr/bin/zsh
   become: yes

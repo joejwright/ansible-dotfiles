@@ -1,0 +1,26 @@
+autoload -U add-zsh-hook
+
+load_rails_docker_aliases() {
+
+  if [ -f .env ]; then
+
+    set -a
+    . ./.env
+    set +a
+
+    echo "Loading docker-compose aliases for Rails"
+
+    alias dctest="echo docker-compose app service: ${DC_APP_SERVICE}"
+
+    alias rails="docker-compose run --rm ${DC_APP_SERVICE} bundle exec rails"
+
+    alias rake="docker-compose run --rm ${DC_APP_SERVICE} bundle exec rake"
+
+    alias bundle="docker-compose run --rm ${DC_APP_SERVICE} bundle "
+
+  fi
+}
+
+load_rails_docker_aliases
+
+add-zsh-hook chpwd load_rails_docker_aliases
