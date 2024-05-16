@@ -18,6 +18,7 @@
     src: vimrc.j2
     dest: ~/.vimrc
 
-- name: Perform Vundle install
-  shell: vim +PluginInstall +qall
+# commented out since this was causing runbook to hang
+# - name: Perform Vundle install
+#   shell: vim +PluginInstall +qall
 
