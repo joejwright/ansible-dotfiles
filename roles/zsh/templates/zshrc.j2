@@ -4,7 +4,6 @@ DISABLE_AUTO_TITLE="true"
 source $HOME/.zsh-aliases
 
 # Customize to your needs...
-#export PATH=/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/joewright/.rvm/gems/ruby-1.9.2-p180/bin:/Users/joewright/.rvm/gems/ruby-1.9.2-p180@global/bin:/Users/joewright/.rvm/rubies/ruby-1.9.2-p180/bin:/Users/joewright/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/opt/PalmPDK/bin:/opt/PalmSDK/0.1/bin/:/Users/joewright/bin/Sencha/Cmd/3.1.2.342
 export PATH=/usr/local/git/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
 
 # Add RVM to PATH for scripting
@@ -21,6 +20,10 @@ autoload -Uz compinit && compinit
 export EDITOR="nvim"
 export GEM_EDITOR="nvim"
 export GOPATH=$HOME/Repos/Go
+
+alias nvim-joew="NVIM_APPNAME=JoeW \nvim"
+alias nvim="nvim-joew"
+alias vim="nvim-joew"
 
 # Load starship prompt
 eval "$(starship init zsh)"
