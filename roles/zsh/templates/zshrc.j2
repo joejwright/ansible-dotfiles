@@ -18,9 +18,17 @@ export PATH=$PATH:$GOPATH/bin
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
 autoload -Uz compinit && compinit
 
-export EDITOR="nvim"
-export GEM_EDITOR="nvim"
-export GOPATH=$HOME/Repos/Go
+EDITOR="nvim"
+GEM_EDITOR="nvim"
+GOPATH=$HOME/Repos/Go
+
+source <(fzf --zsh)
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
 
 alias nvim-joew="NVIM_APPNAME=JoeW \nvim"
 alias nvim="nvim-joew"
